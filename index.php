@@ -3,8 +3,12 @@
 require ("modele.php");
 require ("view.php");
 
-$res = getEtudiants();
-
-render_all($res);
+if(!isset($_GET["id"])){
+    $res = getEtudiantFormation();
+    render_all($res);
+} else {
+    $etudiantById = getEtudiants($_GET["id"]);
+    render_all($etudiantById);
+}
 
 ?>

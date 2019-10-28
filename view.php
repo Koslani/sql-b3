@@ -1,11 +1,10 @@
 <?php
 
 function render_all($res){
-    while ($row = $res -> fetch()){
+    foreach($res as $row){
         print_r($row);
         echo "<br />";
     }
-
 }
 
 ?>
